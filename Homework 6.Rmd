@@ -1,0 +1,107 @@
+```{r}
+#Question 1
+x <- matrix(c(7, 2, 9, 4, 12, 13), nrow = 2)
+print(x)
+y <- matrix(c(1, 2, 3, 7, 8, 9, 12, 13, 14, 19, 20, 21), nrow = 3)
+print(y)
+print(x %*% y) 
+```
+```{r}
+#Question 2a
+id <- c(1,2,3,4,5)
+name <- c("Peter", "Amy", "Ryan", "Gary", "Michelle")
+salary <- c(623.30, 515.20, 611.00, 729.00, 843.25)
+dataframe <- data.frame(id, name, salary)
+print(dataframe)
+```
+```{r}
+#Question 2b
+id <- c(1,2,3,4,5)
+name <- c("Peter", "Amy", "Ryan", "Gary", "Michelle")
+salary <- c(623.30, 515.20, 611.00, 729.00, 843.25)
+department <- c("Finance", "IT", "Computer Science", "Tech", "Accounting")
+dataframe <- data.frame(id, name, salary, department)
+print(dataframe)
+```
+```{r}
+#Question2c
+id <- c(1,2,3,4,5)
+name <- c("Peter", "Amy", "Ryan", "Gary", "Michelle")
+salary <- c(623.30, 515.20, 611.00, 729.00, 843.25)
+department <- c("Finance", "IT", "Computer Science", "Tech", "Accounting")
+dataframe <- data.frame(id, name, salary, department)
+#remove 1st, 3rd, and 5th rows 
+newdf <- dataframe[c(1,3,5),c(2,3)]
+print(newdf)
+```
+```{r}
+#Question2d
+id <- c(1,2,3,4,5)
+name <- c("Peter", "Amy", "Ryan", "Gary", "Michelle")
+salary <- c(623.30, 515.20, 611.00, 729.00, 843.25)
+dataframe <- data.frame(id, name, salary)
+# x-axis values 
+x <- dataframe[c(1,4,5),]
+# y -axis values
+y <- x$salary
+barplot(y, names.arg = x$name, col = "red", density = 30)
+```
+```{r}
+#Question2e
+id <- c(1,2,3,4,5)
+name <- c("Peter", "Amy", "Ryan", "Gary", "Michelle")
+salary <- c(623.30, 515.20, 611.00, 729.00, 843.25)
+dataframe <- data.frame(id, name, salary)
+# Pie chart labeling the highest, lowest, median salary
+mylabel <- c("Highest salary", "Median salary", "Lowest salary")
+colors <- c("blue", "yellow", "lightgreen")
+pie(c(max(dataframe$salary), median(dataframe$salary), min(dataframe$salary)), label = mylabel, main = "Salary", col= colors)
+```
+
+```{r}
+#Question3 p1
+#while loop example
+play_again = ''
+while (play_again != 'y' & play_again != 'n') {
+  play_again <- tolower(readline(prompt = 'Would you like to play another round? (y/n): '))
+}
+if (play_again == 'n') {
+  'Thanks for playing!'
+} else {
+  '*start function'
+}
+```
+
+```{r}
+#Question3 p2
+# if else example
+choices = c('rock','paper','scissors')
+player = sample(choices, 1)
+computer = sample(choices, 1)
+
+message('You chose ', player)
+message('Computer chose ', computer)
+
+if (player == computer) {
+  'Tie!'
+}  else if (player == 'rock') {
+    if (computer == 'paper') {
+      'You Lose!'
+    } else {
+      'You won!'
+    }
+}  else if (player == 'paper') {
+     if (computer == 'rock') {
+       'You won!'
+     } else {
+       'You lose!'
+     }
+}  else if (player == 'scissors') {
+     if (computer == 'rock') {
+       'You lose!'
+     } else {
+       'You won!'
+     }
+}
+```
+
